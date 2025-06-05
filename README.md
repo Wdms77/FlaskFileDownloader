@@ -27,11 +27,10 @@ L’interface est responsive, dotée de **tri dynamique**, **recherche instantan
 ## 🛠️ Installation & Lancement
 
 1. Cloner le dépôt
+   git clone https://github.com/ton-utilisateur/flask-file-downloader.git
+   cd flask-file-downloader
 
-	git clone https://github.com/ton-utilisateur/flask-file-downloader.git
-	cd flask-file-downloader
-
-3. Construire et lancer le conteneur
+4. Construire et lancer le conteneur
 
 	docker build -t flask-file-downloader . && \
 	docker run -it --rm -p 5000:5000 \
