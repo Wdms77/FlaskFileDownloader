@@ -36,7 +36,6 @@ cd flask-file-downloader
 ```bash
 docker build -t flask-file-downloader . && \
 docker run -it --rm -p 5000:5000 \
-  -v $(pwd)/logs:/logs \
   -v $(pwd)/files:/data \
   flask-file-downloader
 ```

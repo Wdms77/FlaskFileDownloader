@@ -5,7 +5,6 @@ build:
 
 run:
 	docker run -it --rm -p 5000:5000 \
-	  -v $(PWD)/logs:/logs \
 	  -v $(PWD)/files:/data \
 	  flask-file-downloader
 
