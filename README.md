@@ -27,75 +27,77 @@ L’interface est responsive, dotée de **tri dynamique**, **recherche instantan
 ## 🛠️ Installation & Lancement
 
 1. Cloner le dépôt
-
-	git clone https://github.com/ton-utilisateur/flask-file-downloader.git
-	cd flask-file-downloader
+```bash
+git clone https://github.com/ton-utilisateur/flask-file-downloader.git
+cd flask-file-downloader
+```
 
 4. Construire et lancer le conteneur
-
-	docker build -t flask-file-downloader . && \
-	docker run -it --rm -p 5000:5000 \
-		-v $(pwd)/logs:/logs \
-		-v $(pwd)/files:/data \
-		flask-file-downloader
-
+```bash
+docker build -t flask-file-downloader . && \
+docker run -it --rm -p 5000:5000 \
+  -v $(pwd)/logs:/logs \
+  -v $(pwd)/files:/data \
+  flask-file-downloader
+```
 OR
-
-	make
-	make run
+```bash
+make
+make run
+```
 
 3. Accéder à l’application
-
-	👉 http://localhost:5000
-
+```bash
+👉 http://localhost:5000
+```
 
 # 🔍 Endpoints disponibles
-
-Méthode	Route	Description
-GET	/	Interface web HTML
-GET	/api/files	Liste JSON des fichiers avec métadonnées
-GET	/download/<nom>	Téléchargement direct du fichier
-GET	/events	Flux SSE pour les mises à jour en direct
-GET /metrics Métriques Prometheus
-
+```bash
+**Méthode**	**Route**		**Description**
+GET	/			Interface web HTML
+GET	/api/files		Liste JSON des fichiers avec métadonnées
+GET	/download/<nom>		Téléchargement direct du fichier
+GET	/events			Flux SSE pour les mises à jour en direct
+GET 	/metrics 		Métriques Prometheus
+```
 
 # 📦 Exemple d’appel API
-
-	curl http://127.0.0.1:5000/api/files | jq '.[].name'
-
+```bash
+curl http://127.0.0.1:5000/api/files | jq '.[].name'
+```
 
 # 📊 Vérifier les métriques Prometheus
-
-	curl http://localhost:5000/metrics
-
+```bash
+curl http://localhost:5000/metrics
+```
 
 # 🧪 Exécuter les tests
-
-	docker run -it --rm \
-	  -v $(pwd):/app \
-	  -w /app \
-	  python:3.11 \
-	  sh -c "pip install -r requirements.txt && pytest"
-
+```bash
+docker run -it --rm \
+  -v $(pwd):/app \
+  -w /app \
+  python:3.11 \
+  sh -c "pip install -r requirements.txt && pytest"
+```
 
 # 📁 Arborescence minimale du projet
-	
-	flask-file-downloader/
-	│
-	├── app/                    # Code source Flask
-	│   ├── __init__.py
-	│   ├── routes.py
-	│   └── watcher.py
-	│
-	├── static/                 # Fichiers JS / CSS
-	├── templates/              # HTML
-	├── Dockerfile              # Dockerfile
-	├── requirements.txt        # Dépendances
-	├── tests/                  # Tests Pytest
-	│
-	├── files/                  # 📂 Dossier monté en tant que volume
-	└── logs/                   # 📂 Logs persistants
-
+```bash
+flask-file-downloader/
+│
+├── app/                    # Code source Flask
+│   ├── __init__.py
+│   ├── routes.py
+│   └── watcher.py
+│
+├── static/                 # Fichiers JS / CSS
+├── templates/              # HTML
+├── Dockerfile              # Dockerfile
+├── requirements.txt        # Dépendances
+├── tests/                  # Tests Pytest
+│
+├── files/                  # 📂 Dossier monté en tant que volume
+└── logs/                   # 📂 Logs persistants
+```
 
 # 🧠 Bonus UI/UX
 	• Icônes de tri interactifs (⬆️/⬇️) visibles sur les colonnes cliquables
