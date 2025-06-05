@@ -28,7 +28,7 @@ L’interface est responsive, dotée de **tri dynamique**, **recherche instantan
 
 1. Cloner le dépôt
 ```bash
-git clone https://github.com/ton-utilisateur/flask-file-downloader.git
+git clone https://github.com/Wdms77/flask-file-downloader.git
 cd flask-file-downloader
 ```
 
