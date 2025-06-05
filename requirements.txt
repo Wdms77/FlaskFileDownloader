@@ -1,0 +1,7 @@
+flask
+flask-talisman
+flask-testing
+pytest
+gunicorn
+gevent
+prometheus_flask_exporter
