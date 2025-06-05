@@ -34,6 +34,7 @@ L’interface est responsive, dotée de **tri dynamique**, **recherche instantan
 2. Construire et lancer le conteneur
 
 	docker build -t flask-file-downloader . && \
+
 	docker run -it --rm -p 5000:5000 \
 	-v $(pwd)/logs:/logs \
 	-v $(pwd)/files:/data \
