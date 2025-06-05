@@ -35,9 +35,9 @@ L’interface est responsive, dotée de **tri dynamique**, **recherche instantan
 
 	docker build -t flask-file-downloader . && \
 	docker run -it --rm -p 5000:5000 \
-	  -v $(pwd)/logs:/logs \
-	  -v $(pwd)/files:/data \
-   	  flask-file-downloader
+	-v $(pwd)/logs:/logs \
+	-v $(pwd)/files:/data \
+	flask-file-downloader
 
 OR
 
@@ -98,9 +98,6 @@ GET /metrics Métriques Prometheus
 
 
 # 🧠 Bonus UI/UX
-	•	Icônes de tri interactifs (⬆️/⬇️) visibles sur les colonnes cliquables
-	•	Barre de recherche réactive avec mise à jour immédiate du tableau
-	•	Boutons SHA-256 avec aperçu au survol et copie au clic
-
-
-Post "http://127.0.0.1:9090/api/v1/query": dial tcp 127.0.0.1:9090: connect: connection refused - There was an error returned querying the Prometheus API.
+	• Icônes de tri interactifs (⬆️/⬇️) visibles sur les colonnes cliquables
+	• Barre de recherche réactive avec mise à jour immédiate du tableau
+	• Boutons SHA-256 avec aperçu au survol et copie au clic
