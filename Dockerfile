@@ -13,7 +13,7 @@ WORKDIR /app
 
 COPY --chown=appuser:appuser . /app
 
-RUN mkdir -p /app/logs /data && chown -R appuser:appuser /app /data
+RUN mkdir -p /logs /data && chown -R appuser:appuser /app /data /logs
 
 RUN pip install --no-cache-dir --disable-pip-version-check -r requirements.txt
 
