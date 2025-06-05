@@ -28,25 +28,25 @@ L’interface est responsive, dotée de **tri dynamique**, **recherche instantan
 
 1. Cloner le dépôt
 
-git clone https://github.com/ton-utilisateur/flask-file-downloader.git
-cd flask-file-downloader
+	git clone https://github.com/ton-utilisateur/flask-file-downloader.git
+	cd flask-file-downloader
 
 2. Construire et lancer le conteneur
 
-docker build -t flask-file-downloader . && \
-docker run -it --rm -p 5000:5000 \
-  -v $(pwd)/logs:/logs \
-  -v $(pwd)/files:/data \
-  flask-file-downloader
+	docker build -t flask-file-downloader . && \
+	docker run -it --rm -p 5000:5000 \
+	  -v $(pwd)/logs:/logs \
+	  -v $(pwd)/files:/data \
+   	  flask-file-downloader
 
 OR
 
-make
-make run
+	make
+	make run
 
 3. Accéder à l’application
 
-👉 http://localhost:5000
+	👉 http://localhost:5000
 
 
 # 🔍 Endpoints disponibles
@@ -61,41 +61,40 @@ GET /metrics Métriques Prometheus
 
 # 📦 Exemple d’appel API
 
-curl http://127.0.0.1:5000/api/files | jq '.[].name'
+	curl http://127.0.0.1:5000/api/files | jq '.[].name'
 
 
 # 📊 Vérifier les métriques Prometheus
 
-curl http://localhost:5000/metrics
+	curl http://localhost:5000/metrics
 
 
 # 🧪 Exécuter les tests
-	1.	Lancer un conteneur pour le test :
 
-docker run -it --rm \
-  -v $(pwd):/app \
-  -w /app \
-  python:3.11 \
-  sh -c "pip install -r requirements.txt && pytest"
+	docker run -it --rm \
+	  -v $(pwd):/app \
+	  -w /app \
+	  python:3.11 \
+	  sh -c "pip install -r requirements.txt && pytest"
 
 
 # 📁 Arborescence minimale du projet
-
-flask-file-downloader/
-│
-├── app/                    # Code source Flask
-│   ├── __init__.py
-│   ├── routes.py
-│   └── watcher.py
-│
-├── static/                 # Fichiers JS / CSS
-├── templates/              # HTML
-├── Dockerfile              # Dockerfile
-├── requirements.txt        # Dépendances
-├── tests/                  # Tests Pytest
-│
-├── files/                  # 📂 Dossier monté en tant que volume
-└── logs/                   # 📂 Logs persistants
+	
+	flask-file-downloader/
+	│
+	├── app/                    # Code source Flask
+	│   ├── __init__.py
+	│   ├── routes.py
+	│   └── watcher.py
+	│
+	├── static/                 # Fichiers JS / CSS
+	├── templates/              # HTML
+	├── Dockerfile              # Dockerfile
+	├── requirements.txt        # Dépendances
+	├── tests/                  # Tests Pytest
+	│
+	├── files/                  # 📂 Dossier monté en tant que volume
+	└── logs/                   # 📂 Logs persistants
 
 
 # 🧠 Bonus UI/UX
