@@ -42,8 +42,7 @@ docker run -it --rm -p 5000:5000 \
 ```
 OR
 ```bash
-make
-make run
+make & make run
 ```
 
 3. Accéder à l’application
@@ -53,7 +52,6 @@ make run
 
 # 🔍 Endpoints disponibles
 ```bash
-**Méthode**	**Route**		**Description**
 GET	/			Interface web HTML
 GET	/api/files		Liste JSON des fichiers avec métadonnées
 GET	/download/<nom>		Téléchargement direct du fichier
