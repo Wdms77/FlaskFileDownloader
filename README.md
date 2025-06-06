@@ -61,7 +61,11 @@ GET 	/metrics 		Métriques Prometheus
 
 # 📦 Exemple d’appel API
 ```bash
+# Récupérer la liste des fichiers présents
 curl http://127.0.0.1:5000/api/files | jq '.[].name'
+
+# Récupérer un fichier
+wget http://127.0.0.1:5000/download/helloworld.txt
 ```
 
 # 📊 Vérifier les métriques Prometheus
@@ -86,21 +90,22 @@ make test
 flask-file-downloader/
 │
 ├── app/                    # Code source Flask
-│   ├── __init__.py
+│   ├── static/ 			# Fichiers JS / CSS
+│	├── templates/          # HTML
+│	├── __init__.py
 │   ├── routes.py
 │   └── watcher.py
-│
-├── static/                 # Fichiers JS / CSS
-├── templates/              # HTML
-├── Dockerfile              # Dockerfile
+│   
+├── run.py
 ├── requirements.txt        # Dépendances
+├── Dockerfile              # Dockerfile
+├── Makefile
 ├── tests/                  # Tests Pytest
 │
-├── files/                  # 📂 Dossier monté en tant que volume
-└── logs/                   # 📂 Logs persistants
+└── files/                  # 📂 Dossier monté en tant que volume
 ```
 
 # 🧠 Bonus UI/UX
 	• Icônes de tri interactifs (⬆️/⬇️) visibles sur les colonnes cliquables
 	• Barre de recherche réactive avec mise à jour immédiate du tableau
-	• Boutons SHA-256 avec aperçu au survol et copie au clic
+	• Boutons SHA-256 avec copie au clic
