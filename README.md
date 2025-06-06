@@ -71,11 +71,14 @@ curl http://localhost:5000/metrics
 
 # 🧪 Exécuter les tests
 ```bash
-docker run -it --rm \
-  -v $(pwd):/app \
-  -w /app \
-  python:3.11 \
-  sh -c "pip install -r requirements.txt && pytest"
+docker build -t flask-file-downloader .
+docker run --rm -d --name ffd_test -p 5000:5000 -v $(PWD)/files:/data flask-file-downloader
+docker exec ffd_test pytest tests -v
+docker stop ffd_test
+```
+OR
+```bash
+make test
 ```
 
 # 📁 Arborescence minimale du projet

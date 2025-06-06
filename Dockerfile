@@ -11,7 +11,9 @@ RUN useradd -m -s /bin/bash appuser
 
 WORKDIR /app
 
-COPY --chown=appuser:appuser . /app
+COPY --chown=appuser:appuser requirements.txt run.py /app/
+COPY --chown=appuser:appuser app /app/app
+COPY --chown=appuser:appuser tests /app/tests
 
 RUN mkdir -p /logs /data && chown -R appuser:appuser /app /data /logs
 

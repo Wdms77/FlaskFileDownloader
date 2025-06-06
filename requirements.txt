@@ -5,3 +5,4 @@ pytest
 gunicorn
 gevent
 prometheus_flask_exporter
+requests
