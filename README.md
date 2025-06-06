@@ -91,8 +91,8 @@ flask-file-downloader/
 │
 ├── app/                    # Code source Flask
 │   ├── static/ 			# Fichiers JS / CSS
-│	├── templates/          # HTML
-│	├── __init__.py
+│   ├── templates/          # HTML
+│   ├── __init__.py
 │   ├── routes.py
 │   └── watcher.py
 │   
