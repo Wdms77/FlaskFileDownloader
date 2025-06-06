@@ -90,7 +90,7 @@ make test
 flask-file-downloader/
 │
 ├── app/                    # Code source Flask
-│   ├── static/ 			# Fichiers JS / CSS
+│   ├── static/ 	    # Fichiers JS / CSS
 │   ├── templates/          # HTML
 │   ├── __init__.py
 │   ├── routes.py
